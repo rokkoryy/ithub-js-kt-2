@@ -1,10 +1,28 @@
 /**
- * @param {string} height - Высота лесенки 
+ * @param {string} height - Высота лесенки
  * @returns {string} Строка с отображением лесенки
  * @description Формирование строки с лесенкой заданной длины
  */
 export function renderLadder(height) {
-    let result = ''
+  if (height === null) {
+    throw new Error("Пользователь отменил ввод");
+  }
 
-    return result
+  const h = Number(height);
+
+  if (h < 0) {
+    throw new Error("Некорректные входные данные");
+  }
+
+  if (h === 0) {
+    return "";
+  }
+
+  if (h === 1) {
+    return "1";
+  }
+
+  let result = "";
+
+  return result;
 }

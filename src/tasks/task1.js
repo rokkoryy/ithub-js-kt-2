@@ -5,21 +5,26 @@
  * @description Формирование новой строки без указанного символа
  */
 export function processWord(word, ignoredCharacted) {
-    let result = "";
+  let result = "";
 
-    if (!/^[а-яА-Яa-zA-Z]*$/.test(word)) {
-        throw new Error(
-            "Слово содержит небуквенные символы"
-        );
-    }
+  if (!/^[а-яА-Яa-zA-Z]*$/.test(word)) {
+    throw new Error("Слово содержит небуквенные символы");
+  }
 
-    // TODO
+  if (word === null) {
+    throw new Error("Некорректное слово");
+  }
 
-    if (!word.includes(ignoredCharacted)) {
-        return word;
-    }
+  if (ignoredCharacted === null) {
+    throw new Error("Не указан игнорируемый символ");
+  }
+  // TODO
 
-    // TODO
+  if (!word.includes(ignoredCharacted)) {
+    return word;
+  }
 
-    return result;
+  // TODO
+
+  return result;
 }
