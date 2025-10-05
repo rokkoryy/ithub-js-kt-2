@@ -7,5 +7,25 @@
 export function getMultiplesOfThree(userInput) {
   let result = "";
 
+  if (userInput === null) {
+    throw new Error("Пользователь отменил ввод");
+  }
+
+  userInput = Number(userInput);
+
+  if (!Number.isFinite(userInput)) {
+    throw new Error("Некорректные входные данные");
+  }
+
+  for (let i = 1; i <= userInput; i++) {
+    if (i % 3 === 0) {
+      if (result !== "") {
+        result += ", ";
+      }
+
+      result += i;
+    }
+  }
+
   return result;
 }
